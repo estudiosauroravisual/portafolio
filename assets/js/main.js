@@ -252,4 +252,64 @@
         imageObserver.observe(box);
   });
 
+  
+
+  const form = document.getElementById('contactForm');
+
+  form.addEventListener('submit', function(e) {
+      e.preventDefault(); // Evita que la página se recargue
+
+      // Muestra un indicador de carga mientras se envía
+      Swal.fire({
+          title: 'Enviando...',
+          text: 'Por favor espera un momento.',
+          icon: 'info',
+          allowOutsideClick: false,
+          showConfirmButton: false,
+          didOpen: () => {
+              Swal.showLoading();
+          }
+      });
+
+      const formData = new FormData(form);
+
+      fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: {
+              'Accept': 'application/json'
+          }
+      })
+      .then(response => {
+          if (response.ok) {
+              // MENSAJE DE ÉXITO
+              Swal.fire({
+                  title: '¡Mensaje Enviado!',
+                  text: 'Gracias por contactarme. Te responderé pronto.',
+                  icon: 'success',
+                  confirmButtonText: 'Genial',
+                  confirmButtonColor: '#ff4d4f' // Tu color rojo de acento
+              });
+              form.reset(); // Limpia el formulario
+          } else {
+              // SI HUBO UN ERROR EN EL SERVIDOR
+              Swal.fire({
+                  title: 'Ups...',
+                  text: 'Hubo un problema al enviar el correo. Inténtalo de nuevo.',
+                  icon: 'error',
+                  confirmButtonColor: '#ff4d4f'
+              });
+          }
+      })
+      .catch(error => {
+          // SI FALLA LA CONEXIÓN O INTERNET
+          Swal.fire({
+              title: 'Error de conexión',
+              text: 'No se pudo conectar con el servidor.',
+              icon: 'error',
+              confirmButtonColor: '#ff4d4f'
+          });
+      });
+  });
+
 })();
