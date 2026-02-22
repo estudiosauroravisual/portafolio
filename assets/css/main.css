@@ -4258,7 +4258,53 @@ section,
 /*--------------------------------------------------------------
 # Starter Section Section
 --------------------------------------------------------------*/
-.starter-section {
+.star/* --- DISEÑO PINTEREST PARA SERVICIOS (CORREGIDO) --- */
+.pinterest-services-grid {
+    column-count: 2;
+    column-gap: 20px;
+    width: 100%;
+    display: block !important; /* Forzamos que el contenedor exista */
+    margin-top: 30px;
+}
+
+.service-image-item {
+    break-inside: avoid;
+    margin-bottom: 20px;
+    display: block; /* Asegura que ocupe espacio */
+    background-color: #222; /* Color de fondo temporal por si la imagen tarda en cargar */
+    border-radius: 10px;
+    overflow: hidden;
+    /* Quitamos opacity: 0 para que no desaparezcan */
+}
+
+.service-image-item img {
+    width: 100% !important; /* Forzamos el ancho */
+    height: auto !important;
+    display: block !important;
+    min-height: 100px; /* Evita que la miniatura colapse a 0px */
+    transition: transform 0.3s ease;
+    cursor: zoom-in;
+}
+
+.service-image-item img:hover {
+    transform: scale(1.02);
+}
+
+/* Animación opcional (si el JS funciona, se verá un poquito mejor) */
+.service-image-item.active {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}ter-section {
   /* Add your styles here */
 }
 
@@ -4384,4 +4430,128 @@ section,
     background-color: #cc0000; /* Rojo más oscuro */
     transform: translateY(-2px); /* Se eleva un poquito */
     box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4); /* Sombra roja brillante */
+}
+
+/*grid tipo pinterest Masonry Layout (diseño de mampostería)*/
+
+/* --- DISEÑO PINTEREST PARA SERVICIOS (CORREGIDO) --- */
+.pinterest-services-grid {
+    column-count: 2;
+    column-gap: 20px;
+    width: 100%;
+    display: block !important; /* Forzamos que el contenedor exista */
+    margin-top: 30px;
+}
+
+.service-image-item {
+    break-inside: avoid;
+    margin-bottom: 20px;
+    display: block; /* Asegura que ocupe espacio */
+    background-color: #222; /* Color de fondo temporal por si la imagen tarda en cargar */
+    border-radius: 10px;
+    overflow: hidden;
+    /* Quitamos opacity: 0 para que no desaparezcan */
+}
+
+.service-image-item img {
+    width: 100% !important; /* Forzamos el ancho */
+    height: auto !important;
+    display: block !important;
+    min-height: 100px; /* Evita que la miniatura colapse a 0px */
+    transition: transform 0.3s ease;
+    cursor: zoom-in;
+}
+
+.service-image-item img:hover {
+    transform: scale(1.02);
+}
+
+/* Animación opcional (si el JS funciona, se verá un poquito mejor) */
+.service-image-item.active {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*imagen slider*/
+/* ==========================================
+   SLIDER ANTES / DESPUÉS (BEERSLIDER)
+   ========================================== */
+.comparison-wrapper {
+    max-width: 800px; /* Ajusta el tamaño máximo aquí */
+    margin: 40px auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5); /* Sombra oscura */
+}
+
+.beer-slider {
+    box-shadow: none !important;
+}
+
+/* Personalizamos la barra separadora y el botón con tu color rojo */
+.beer-handle {
+    background: #ff0000 !important; /* El círculo central */
+}
+.beer-range::-webkit-slider-thumb {
+    background: #ff0000 !important; /* La línea vertical */
+}
+.beer-range::-moz-range-thumb {
+    background: #ff0000 !important;
+}
+
+/* Estilo de los textos "Antes" y "Después" */
+.beer-slider::after, .beer-reveal::after {
+    background: rgba(26, 26, 26, 0.8) !important; /* Fondo gris oscuro */
+    color: #fff !important;
+    border-radius: 4px;
+    padding: 6px 12px;
+}
+
+/*video reels*/
+
+/* Contenedor del Reel - TAMAÑO CORREGIDO */
+.video-reel-container {
+    width: 100%;             /* Permite que use el espacio disponible */
+    max-width: 450px;        /* Aumentamos de 320px a 450px para que luzca en la web */
+    margin: 40px auto;       /* Más espacio arriba y abajo para que respire */
+    border-radius: 25px;     /* Bordes redondeados tipo smartphone moderno */
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.7);
+    background-color: #000;
+    border: 6px solid #1a1a1a; /* Marco un poco más grueso para que parezca una pantalla */
+}
+
+/* El video se ajusta al nuevo tamaño del contenedor */
+.video-reel {
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 9 / 16;   /* Mantiene el formato vertical perfecto */
+    object-fit: cover;
+}
+
+/* Ajustes para Tablets y Laptops pequeñas */
+@media (max-width: 992px) {
+    .video-reel-container {
+        max-width: 380px;    /* Un poco más chico en tablets */
+    }
+}
+
+/* Ajustes para Celulares (Mobile) */
+@media (max-width: 576px) {
+    .video-reel-container {
+        max-width: 85%;      /* Se adapta al ancho de la pantalla del celular */
+        margin: 20px auto;
+        border-width: 4px;   /* Borde más fino en celular */
+    }
 }
