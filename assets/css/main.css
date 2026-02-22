@@ -4258,9 +4258,10 @@ section,
 /*--------------------------------------------------------------
 # Starter Section Section
 --------------------------------------------------------------*/
-.starter-section {
-  /* Add your styles here */
-}
+/* .starter-section {
+   Espacio reservado para nuevas secciones personalizadas 
+} 
+*/
 
 /* ==========================================================================
    A PARTIR DE AQUÍ: CSS PERSONALIZADO (AURORA VISUAL)
@@ -4533,4 +4534,59 @@ section,
     .service-details .overview-header h2 {
         font-size: 1.8rem;
     }
+}
+
+/* --- HEADER DE TARJETA ESTÁTICO (SOLUCIÓN SEGURA) --- */
+.card-header.header-with-bg {
+    position: relative;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    border-bottom: 2px solid var(--accent-color);
+    border-radius: 15px 15px 0 0;
+    overflow: hidden;
+    /* Fondo negro puro para que NUNCA se vea el rojo */
+    background-color: #000 !important; 
+}
+
+/* La Capa de la Imagen */
+.card-header.header-with-bg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Asegúrate de que la ruta sea correcta */
+    background-image: url('../img/gallery/DSC00856-2.webp');
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+    opacity: 1;
+}
+
+/* La Capa Oscura (Para que el texto sea legible) */
+.card-header.header-with-bg::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Oscuridad fija */
+    z-index: 2;
+}
+
+/* Texto e Iconos */
+.card-header.header-with-bg .service-icon,
+.card-header.header-with-bg h3,
+.card-header.header-with-bg .service-tagline {
+    position: relative;
+    z-index: 3;
+    color: #ffffff !important;
+}
+
+/* Eliminar fondo rojo de la tarjeta base por si acaso */
+.service-card {
+    background-color: #1a1a1a !important;
+    border: none !important;
 }
