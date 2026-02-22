@@ -1,4 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
-<svg width="800px" height="800px" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M13 2H14V0H2V2H3V4.41421L6.58579 8L3 11.5858V14H2V16H14V14H13V11.5858L9.41421 8L13 4.41421V2ZM5 3.58579V2H11V3.58579L8 6.58579L5 3.58579Z" fill="#000000"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Capa_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 800 800">
+  <!-- Generator: Adobe Illustrator 30.2.1, SVG Export Plug-In . SVG Version: 2.1.1 Build 1)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: #fff;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path class="st0" d="M650,100h50V0H100v100h50v120.71l179.29,179.29-179.29,179.29v120.71h-50v100h600v-100h-50v-120.71l-179.29-179.29,179.29-179.29v-120.71ZM250,179.29v-79.29h300v79.29l-150,150-150-150Z"/>
 </svg>
