@@ -4258,164 +4258,45 @@ section,
 /*--------------------------------------------------------------
 # Starter Section Section
 --------------------------------------------------------------*/
-.star/* --- DISEÑO PINTEREST PARA SERVICIOS (CORREGIDO) --- */
-.pinterest-services-grid {
-    column-count: 2;
-    column-gap: 20px;
-    width: 100%;
-    display: block !important; /* Forzamos que el contenedor exista */
-    margin-top: 30px;
-}
-
-.service-image-item {
-    break-inside: avoid;
-    margin-bottom: 20px;
-    display: block; /* Asegura que ocupe espacio */
-    background-color: #222; /* Color de fondo temporal por si la imagen tarda en cargar */
-    border-radius: 10px;
-    overflow: hidden;
-    /* Quitamos opacity: 0 para que no desaparezcan */
-}
-
-.service-image-item img {
-    width: 100% !important; /* Forzamos el ancho */
-    height: auto !important;
-    display: block !important;
-    min-height: 100px; /* Evita que la miniatura colapse a 0px */
-    transition: transform 0.3s ease;
-    cursor: zoom-in;
-}
-
-.service-image-item img:hover {
-    transform: scale(1.02);
-}
-
-/* Animación opcional (si el JS funciona, se verá un poquito mejor) */
-.service-image-item.active {
-    animation: fadeInUp 0.6s ease forwards;
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}ter-section {
+.starter-section {
   /* Add your styles here */
 }
 
+/* ==========================================================================
+   A PARTIR DE AQUÍ: CSS PERSONALIZADO (AURORA VISUAL)
+   Documentado y optimizado para Escritorio y Móviles
+   ========================================================================== */
 
-/* efecto sticky */
-
-/* Limpieza total del contenedor */
-.portfolio-sticky-section {
-    display: flex;
-    background: transparent; /* Sin fondo negro */
-    color: #000; /* Texto en negro para que se vea */
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-}
-
-/* Columna de texto pegajosa */
-.sticky-text-col {
-    width: 40%;
-    height: 100vh;
-    position: sticky;
-    top: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 5;
-}
-
-.main-title {
-    font-size: 3rem;
-    font-family: sans-serif;
-    font-weight: bold;
-}
-
-/* Columna de imágenes */
-.scroll-images-col {
-    width: 60%;
-    display: flex;
-    flex-direction: column;
-    gap: 100px; /* Espacio entre fotos */
-    padding: 100px 20px;
-}
-
-/* LA CAJA DE LA IMAGEN */
-.image-box {
-    width: 300px; /* Tamaño pequeño como pediste */
-    opacity: 0; /* JS la activará */
-    transform: translateY(50px);
-    transition: all 0.8s ease-out;
-}
-
-/* Zig-Zag */
-.pos-izquierda { align-self: flex-start; }
-.pos-derecha { align-self: flex-end; }
-
-/* Inclinaciones */
-.tilt-neg img { transform: rotate(-6deg); }
-.tilt-pos img { transform: rotate(6deg); }
-.tilt-pos-light img { transform: rotate(3deg); }
-.tilt-neg-strong img { transform: rotate(-8deg); }
-
-/* IMAGEN REAL */
-.image-box img {
-    width: 100%; /* Ocupa los 300px de la caja */
-    height: auto;
-    display: block; /* Quita espacios fantasma */
-    border-radius: 10px;
-}
-
-/* CLASE QUE ACTIVA EL JS */
-.image-box.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-
-
-
-
-/*ventana para mandar correo*/
-/* --- ESTILOS DE LOS INPUTS (MODO OSCURO) --- */
+/* -----------------------------------------------------------
+   1. FORMULARIO DE CONTACTO (MODO OSCURO)
+   ----------------------------------------------------------- */
 .dark-form .form-control {
-    background-color: #1a1a1a; /* Fondo gris casi negro */
-    border: 1px solid #333;    /* Borde sutil */
-    color: #ffffff;            /* Texto blanco al escribir */
-    border-radius: 5px;        /* Bordes un poco redondeados */
-    padding: 12px 15px;        /* Más espacio interno */
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    color: #ffffff;
+    border-radius: 5px;
+    padding: 12px 15px;
 }
 
-/* Color del texto de ayuda (placeholder) */
 .dark-form .form-control::placeholder {
-    color: #888; /* Gris medio para que no destaque demasiado */
+    color: #888;
     opacity: 1;
 }
 
-/* Efecto al hacer clic en el input (Focus) */
 .dark-form .form-control:focus {
-    background-color: #1a1a1a; /* Mantiene el fondo oscuro */
+    background-color: #1a1a1a;
     color: #ffffff;
-    border-color: #ff0000;     /* El borde se pone ROJO al escribir */
-    box-shadow: none;          /* Quita el brillo azul feo de Bootstrap */
+    border-color: #ff0000;
+    box-shadow: none;
     outline: none;
 }
 
-/* --- ESTILO DEL BOTÓN ROJO --- */
 .btn-rojo {
-    background-color: #ff0000; /* Rojo puro */
+    background-color: #ff0000;
     color: #ffffff;
     border: none;
     padding: 12px 40px;
-    border-radius: 50px;       /* Botón redondeado tipo píldora */
+    border-radius: 50px;
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
@@ -4425,39 +4306,37 @@ section,
     margin-top: 10px;
 }
 
-/* Efecto al pasar el mouse por el botón */
 .btn-rojo:hover {
-    background-color: #cc0000; /* Rojo más oscuro */
-    transform: translateY(-2px); /* Se eleva un poquito */
-    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4); /* Sombra roja brillante */
+    background-color: #cc0000;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4);
 }
 
-/*grid tipo pinterest Masonry Layout (diseño de mampostería)*/
-
-/* --- DISEÑO PINTEREST PARA SERVICIOS (CORREGIDO) --- */
+/* -----------------------------------------------------------
+   2. GRID TIPO PINTEREST (SERVICIOS)
+   ----------------------------------------------------------- */
 .pinterest-services-grid {
     column-count: 2;
     column-gap: 20px;
     width: 100%;
-    display: block !important; /* Forzamos que el contenedor exista */
+    display: block;
     margin-top: 30px;
 }
 
 .service-image-item {
     break-inside: avoid;
     margin-bottom: 20px;
-    display: block; /* Asegura que ocupe espacio */
-    background-color: #222; /* Color de fondo temporal por si la imagen tarda en cargar */
+    display: block;
+    background-color: #222;
     border-radius: 10px;
     overflow: hidden;
-    /* Quitamos opacity: 0 para que no desaparezcan */
 }
 
 .service-image-item img {
-    width: 100% !important; /* Forzamos el ancho */
+    width: 100% !important;
     height: auto !important;
     display: block !important;
-    min-height: 100px; /* Evita que la miniatura colapse a 0px */
+    min-height: 100px;
     transition: transform 0.3s ease;
     cursor: zoom-in;
 }
@@ -4466,92 +4345,192 @@ section,
     transform: scale(1.02);
 }
 
-/* Animación opcional (si el JS funciona, se verá un poquito mejor) */
 .service-image-item.active {
     animation: fadeInUp 0.6s ease forwards;
 }
 
 @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-/*imagen slider*/
-/* ==========================================
-   SLIDER ANTES / DESPUÉS (BEERSLIDER)
-   ========================================== */
+/* -----------------------------------------------------------
+   3. SLIDER ANTES / DESPUÉS (BEERSLIDER)
+   ----------------------------------------------------------- */
 .comparison-wrapper {
-    max-width: 800px; /* Ajusta el tamaño máximo aquí */
+    max-width: 800px;
     margin: 40px auto;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5); /* Sombra oscura */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
 .beer-slider {
     box-shadow: none !important;
 }
 
-/* Personalizamos la barra separadora y el botón con tu color rojo */
-.beer-handle {
-    background: #ff0000 !important; /* El círculo central */
-}
-.beer-range::-webkit-slider-thumb {
-    background: #ff0000 !important; /* La línea vertical */
-}
+.beer-handle,
+.beer-range::-webkit-slider-thumb,
 .beer-range::-moz-range-thumb {
     background: #ff0000 !important;
 }
 
-/* Estilo de los textos "Antes" y "Después" */
-.beer-slider::after, .beer-reveal::after {
-    background: rgba(26, 26, 26, 0.8) !important; /* Fondo gris oscuro */
+.beer-slider::after, 
+.beer-reveal::after {
+    background: rgba(26, 26, 26, 0.8) !important;
     color: #fff !important;
     border-radius: 4px;
     padding: 6px 12px;
 }
 
-/*video reels*/
-
-/* Contenedor del Reel - TAMAÑO CORREGIDO */
+/* -----------------------------------------------------------
+   4. VIDEO REEL (DA VINCI / BEFORE & AFTER)
+   ----------------------------------------------------------- */
 .video-reel-container {
-    width: 100%;             /* Permite que use el espacio disponible */
-    max-width: 450px;        /* Aumentamos de 320px a 450px para que luzca en la web */
-    margin: 40px auto;       /* Más espacio arriba y abajo para que respire */
-    border-radius: 25px;     /* Bordes redondeados tipo smartphone moderno */
+    width: 100%;
+    max-width: 450px;
+    margin: 40px auto;
+    border-radius: 25px;
     overflow: hidden;
     box-shadow: 0 20px 50px rgba(0,0,0,0.7);
     background-color: #000;
-    border: 6px solid #1a1a1a; /* Marco un poco más grueso para que parezca una pantalla */
+    border: 6px solid #1a1a1a;
 }
 
-/* El video se ajusta al nuevo tamaño del contenedor */
 .video-reel {
     width: 100%;
     height: auto;
     display: block;
-    aspect-ratio: 9 / 16;   /* Mantiene el formato vertical perfecto */
+    aspect-ratio: 9 / 16;
     object-fit: cover;
 }
 
-/* Ajustes para Tablets y Laptops pequeñas */
-@media (max-width: 992px) {
-    .video-reel-container {
-        max-width: 380px;    /* Un poco más chico en tablets */
+/* -----------------------------------------------------------
+   5. EFECTO STICKY (SECCIÓN COSPLAY) - ESCRITORIO
+   ----------------------------------------------------------- */
+.portfolio-sticky-section {
+    display: flex;
+    background: transparent;
+    color: var(--default-color);
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    align-items: flex-start; /* Evita que estire la columna */
+}
+
+/* Columna de Texto: Se queda fija al hacer scroll en PC */
+.sticky-text-col {
+    width: 40%;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra el texto verticalmente */
+    z-index: 5;
+    padding-right: 30px;
+}
+
+/* Columna de Imágenes: Desliza por el lado */
+.scroll-images-col {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    padding: 100px 20px;
+}
+
+.image-box {
+    width: 320px;
+    opacity: 0; /* JS la activa al hacer scroll */
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
+}
+
+.image-box.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.image-box img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* Modificadores de posición e inclinación para PC */
+.pos-izquierda { align-self: flex-start; }
+.pos-derecha { align-self: flex-end; }
+.tilt-neg img { transform: rotate(-6deg); }
+.tilt-pos img { transform: rotate(6deg); }
+.tilt-pos-light img { transform: rotate(3deg); }
+
+/* ==========================================================================
+   AJUSTES MÓVILES (TABLETS Y CELULARES)
+   Solución definitiva para superposiciones y colapsos
+   ========================================================================== */
+
+@media (max-width: 991px) {
+    /* --- Ajustes del Layout General --- */
+    .video-reel-container { max-width: 380px; }
+
+    /* --- Solución Sidebar (Precios) superpuesto --- */
+    .service-details .sticky-sidebar {
+        position: relative !important;
+        top: auto !important;
+        margin-bottom: 50px !important; /* Da aire antes de que empiece el título */
+        display: block;
+        z-index: 10;
+    }
+
+    /* --- Solución Sección Sticky (Texto montado en imágenes) --- */
+    .portfolio-sticky-section {
+        flex-direction: column; /* Apila texto arriba, fotos abajo */
+        min-height: auto !important; /* APAGA el alto de 100vh que tapaba todo */
+        display: block; 
+    }
+
+    /* APAGAMOS el efecto pegajoso en el texto en móviles */
+    .sticky-text-col {
+        width: 100%;
+        height: auto !important; /* Vital para que el texto ocupe solo lo que necesita */
+        position: relative !important;
+        top: auto !important;
+        display: block; /* Quitamos el flex para que el texto fluya natural */
+        padding-right: 0;
+        margin-bottom: 30px;
+        z-index: 1;
+    }
+
+    /* --- Solución Galería de Imágenes --- */
+    .scroll-images-col {
+        width: 100%;
+        padding: 20px 0; /* Menos margen arriba y abajo */
+        gap: 40px; /* Menos espacio entre fotos */
+        align-items: center; /* Centramos las fotos en el teléfono */
+    }
+
+    .image-box {
+        width: 90%; /* La foto ocupa casi toda la pantalla */
+        align-self: center !important; /* Anulamos pos-derecha o izquierda */
+    }
+    
+    /* Opcional: Anulamos las inclinaciones en móvil para que se vea más ordenado */
+    .tilt-neg img, .tilt-pos img, .tilt-pos-light img {
+        transform: none !important; 
     }
 }
 
-/* Ajustes para Celulares (Mobile) */
 @media (max-width: 576px) {
     .video-reel-container {
-        max-width: 85%;      /* Se adapta al ancho de la pantalla del celular */
+        max-width: 85%;
         margin: 20px auto;
-        border-width: 4px;   /* Borde más fino en celular */
+        border-width: 4px;
+    }
+    
+    .service-details .overview-header h2 {
+        font-size: 1.8rem;
     }
 }
