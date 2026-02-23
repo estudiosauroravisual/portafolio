@@ -771,35 +771,39 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Hero Section - Video Version
+# Hero Section - Aurora Visual Version
 --------------------------------------------------------------*/
+
 .hero {
   padding-top: 80px;
+  padding-bottom: 80px;
   min-height: 100vh;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  padding-bottom: 80px;
-  background-color: #000; /* Fondo negro base */
+  background-color: #000;
 }
 
-/* Contenedor del Iframe de Cloudinary */
+/* ===============================
+   VIDEO BACKGROUND
+================================ */
+
 .video-background {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   z-index: 1;
-  pointer-events: none; /* Permite hacer click en botones de texto */
+  pointer-events: none;
 }
 
 .video-background iframe {
   width: 100vw;
-  height: 56.25vw; /* Proporción 16:9 */
+  height: 56.25vw; /* 16:9 */
   min-height: 100vh;
-  min-width: 177.77vh; /* Asegura que cubra todo el ancho/alto */
+  min-width: 177.77vh;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -807,34 +811,85 @@ section,
   object-fit: cover;
 }
 
-/* Capa de filtro oscuro (Overlay) */
-.hero:before {
+/* ===============================
+   OSCURECIMIENTO BASE
+================================ */
+
+.hero::after {
   content: "";
-  /* He subido la opacidad del 30% al 50% para que el video no distraiga demasiado del texto */
-  background: color-mix(in srgb, var(--background-color), transparent 50%);
   position: absolute;
   inset: 0;
+  background: rgba(0, 0, 0, 0.45);
   z-index: 2;
 }
 
-.hero .container {
-  position: relative;
+/* ===============================
+   AURORA BOREAL REALISTA
+================================ */
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: -25%;
   z-index: 3;
+  pointer-events: none;
+
+  background:
+    radial-gradient(circle at 20% 40%, rgba(0,255,170,0.7) 0%, transparent 60%),
+    radial-gradient(circle at 80% 60%, rgba(0,200,255,0.6) 0%, transparent 60%),
+    radial-gradient(circle at 50% 20%, rgba(170,0,255,0.6) 0%, transparent 60%),
+    radial-gradient(circle at 30% 80%, rgba(0,255,120,0.5) 0%, transparent 70%);
+
+  filter: blur(120px);
+  opacity: 0.20;
+  animation: auroraMove 18s ease-in-out infinite alternate;
 }
 
-/* Estilos de texto (se mantienen igual) */
+/* Animación orgánica */
+
+@keyframes auroraMove {
+  0% {
+    transform: translateX(-5%) translateY(0%) scale(1);
+  }
+  25% {
+    transform: translateX(5%) translateY(-3%) scale(1.1);
+  }
+  50% {
+    transform: translateX(0%) translateY(4%) scale(1.05);
+  }
+  75% {
+    transform: translateX(-3%) translateY(-2%) scale(1.12);
+  }
+  100% {
+    transform: translateX(5%) translateY(0%) scale(1);
+  }
+}
+
+/* ===============================
+   HERO CONTENT
+================================ */
+
+.hero .container {
+  position: relative;
+  z-index: 4;
+}
+
 .hero h2 {
   margin: 0;
   font-size: 48px;
   font-weight: 700;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Sombra para resaltar sobre video */
+  letter-spacing: 2px;
+  text-shadow:
+    0 0 10px rgba(0, 255, 170, 0.4),
+    0 0 20px rgba(0, 180, 255, 0.3),
+    2px 2px 6px rgba(0,0,0,0.6);
 }
 
 .hero p {
   margin: 10px 0 0 0;
   font-size: 24px;
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+  color: color-mix(in srgb, var(--default-color), transparent 15%);
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
 }
 
 .hero p span {
@@ -842,6 +897,10 @@ section,
   letter-spacing: 1px;
   border-bottom: 2px solid var(--accent-color);
 }
+
+/* ===============================
+   SOCIAL LINKS
+================================ */
 
 .hero .social-links {
   margin-top: 30px;
@@ -860,6 +919,40 @@ section,
   background: color-mix(in srgb, var(--default-color), transparent 92%);
   color: var(--default-color);
   font-size: 20px;
+  transition: 0.3s ease;
+}
+
+.hero .social-links a:hover {
+  background: var(--accent-color);
+  color: #000;
+  transform: translateY(-4px);
+}
+
+/* ===============================
+   AURORA ANIMATION
+================================ */
+
+@keyframes auroraFlow {
+  0% {
+    transform: translateX(-10%) translateY(0%) rotate(0deg);
+    background-position: 0% 50%;
+  }
+  25% {
+    transform: translateX(10%) translateY(-5%) rotate(2deg);
+    background-position: 50% 50%;
+  }
+  50% {
+    transform: translateX(0%) translateY(5%) rotate(-2deg);
+    background-position: 100% 50%;
+  }
+  75% {
+    transform: translateX(-5%) translateY(-3%) rotate(1deg);
+    background-position: 50% 50%;
+  }
+  100% {
+    transform: translateX(-10%) translateY(0%) rotate(0deg);
+    background-position: 0% 50%;
+  }
 }
 
 /*--------------------------------------------------------------
