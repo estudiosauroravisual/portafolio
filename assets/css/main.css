@@ -826,7 +826,7 @@ section,
 }
 
 /* ===============================
-   AURORA BOREAL REALISTA
+   AURORA BOREAL DINÁMICA
 ================================ */
 
 .hero::before {
@@ -837,33 +837,46 @@ section,
   pointer-events: none;
 
   background:
-    radial-gradient(circle at 20% 40%, rgba(0,255,170,0.7) 0%, transparent 60%),
-    radial-gradient(circle at 80% 60%, rgba(0,200,255,0.6) 0%, transparent 60%),
-    radial-gradient(circle at 50% 20%, rgba(170,0,255,0.6) 0%, transparent 60%),
-    radial-gradient(circle at 30% 80%, rgba(0,255,120,0.5) 0%, transparent 70%);
+    radial-gradient(circle at 20% 40%, rgba(0,255,170,0.8) 0%, transparent 60%),
+    radial-gradient(circle at 80% 60%, rgba(0,200,255,0.7) 0%, transparent 60%),
+    radial-gradient(circle at 50% 20%, rgba(170,0,255,0.7) 0%, transparent 60%),
+    radial-gradient(circle at 30% 80%, rgba(0,255,120,0.6) 0%, transparent 70%);
 
-  filter: blur(120px);
-  opacity: 0.20;
-  animation: auroraMove 18s ease-in-out infinite alternate;
+  opacity: 0.30;
+
+  animation: auroraMove 20s ease-in-out infinite alternate;
 }
 
-/* Animación orgánica */
+
+/* ===============================
+   ANIMACIÓN CON CAMBIO DE COLOR
+================================ */
 
 @keyframes auroraMove {
+
   0% {
     transform: translateX(-5%) translateY(0%) scale(1);
+    filter: blur(120px) hue-rotate(0deg) brightness(1);
   }
+
   25% {
-    transform: translateX(5%) translateY(-3%) scale(1.1);
+    transform: translateX(6%) translateY(-4%) scale(1.1);
+    filter: blur(130px) hue-rotate(60deg) brightness(1.1);
   }
+
   50% {
-    transform: translateX(0%) translateY(4%) scale(1.05);
+    transform: translateX(0%) translateY(5%) scale(1.05);
+    filter: blur(125px) hue-rotate(120deg) brightness(1.15);
   }
+
   75% {
-    transform: translateX(-3%) translateY(-2%) scale(1.12);
+    transform: translateX(-4%) translateY(-3%) scale(1.12);
+    filter: blur(135px) hue-rotate(200deg) brightness(1.05);
   }
+
   100% {
     transform: translateX(5%) translateY(0%) scale(1);
+    filter: blur(120px) hue-rotate(280deg) brightness(1);
   }
 }
 
