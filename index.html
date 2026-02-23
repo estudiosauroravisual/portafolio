@@ -78,8 +78,9 @@
   <main class="main">
 
     <!-- Hero Section -->
-    <section id="hero" class="hero section">
+    <section id="hero" class="hero section video-section">
 
+      <!-- Video Background -->
       <div class="video-background">
         <iframe
           src="https://player.cloudinary.com/embed/?cloud_name=dl8h71ycw&public_id=reelportada2_yj2t1o&autoplay=true&loop=true&muted=true&controls=false"
@@ -89,16 +90,26 @@
         </iframe>
       </div>
 
-      <div class="container text-center" data-aos="fade-up" data-aos-delay="100">
-        <h2>Gabriel Pérez / Aurora Visual</h2>
-        <p>Soy <span class="typed" data-typed-items="Fotógrafo, Editor, Filmmaker, Freelancer, Diseñador"></span></p>
-        
+      <!-- Aurora Overlay (se genera visualmente por CSS ::before y ::after) -->
+
+      <!-- Hero Content -->
+      <div class="container text-center hero-content" data-aos="fade-up" data-aos-delay="100">
+        <h2 class="hero-title">Gabriel Pérez / Aurora Visual</h2>
+
+        <p class="hero-subtitle">
+          Soy
+          <span class="typed"
+            data-typed-items="Fotógrafo, Editor, Filmmaker, Freelancer, Diseñador">
+          </span>
+        </p>
+
         <div class="social-links">
-          </div>
+          <!-- Aquí puedes agregar redes si quieres -->
+        </div>
       </div>
 
     </section>
-    <!-- /END Hero Section -->
+<!-- End Hero Section -->
 
     <!-- Portfolio Section -->
     <section id="portfolio" class="portfolio section">
