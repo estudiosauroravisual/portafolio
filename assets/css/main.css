@@ -4546,9 +4546,9 @@ section,
     width: 5px;
 }*/
 
-.sticky-text-col::-webkit-scrollbar-thumb {
-    background: var(--accent-color);
-    border-radius: 10px;
+/* Esconde la barra para Chrome, Safari y Opera */
+.sticky-text-col::-webkit-scrollbar {
+    display: none;
 }
 
 /* Columna de Imágenes: Desliza por el lado */
