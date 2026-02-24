@@ -4527,17 +4527,27 @@ section,
     align-items: flex-start; /* Evita que estire la columna */
 }
 
-/* Columna de Texto: Se queda fija al hacer scroll en PC */
+/* Columna de Texto que se queda quieta - CORREGIDA */
 .sticky-text-col {
-    width: 40%;
-    height: 100vh;
     position: sticky;
-    top: 0;
+    top: 140px; /* Aumentado para que no lo tape el header */
+    height: calc(100vh - 140px); /* Altura ajustable al espacio sobrante */
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Centra el texto verticalmente */
-    z-index: 5;
-    padding-right: 30px;
+    justify-content: flex-start; /* Cambiado de center a flex-start para que empiece arriba */
+    padding-top: 20px; /* Espacio extra de seguridad */
+    padding-right: 40px;
+    z-index: 10;
+    overflow-y: auto; /* Permite bajar con el ratón si el texto es muy largo */
+}
+
+/* Opcional: Hacer la barra de scroll interna invisible o más estética */
+.sticky-text-col::-webkit-scrollbar {
+    width: 5px;
+}
+.sticky-text-col::-webkit-scrollbar-thumb {
+    background: var(--accent-color);
+    border-radius: 10px;
 }
 
 /* Columna de Imágenes: Desliza por el lado */
