@@ -4541,10 +4541,11 @@ section,
     overflow-y: auto; /* Permite bajar con el ratón si el texto es muy largo */
 }
 
-/* Opcional: Hacer la barra de scroll interna invisible o más estética */
+/* Opcional: Hacer la barra de scroll interna invisible o más estética 
 .sticky-text-col::-webkit-scrollbar {
     width: 5px;
-}
+}*/
+
 .sticky-text-col::-webkit-scrollbar-thumb {
     background: var(--accent-color);
     border-radius: 10px;
