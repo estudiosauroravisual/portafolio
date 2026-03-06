@@ -4667,7 +4667,42 @@ section,
     background-color: #000 !important; 
 }
 
-/* La Capa de la Imagen */
+/* --- ESTILOS COMPARTIDOS PARA HEADERS CON IMAGEN --- */
+.card-header.header-with-bg, 
+.card-header.header-with-bg-otro {
+    position: relative;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    border-bottom: 2px solid var(--accent-color);
+    border-radius: 15px 15px 0 0;
+    overflow: hidden;
+    background-color: #000 !important;
+    z-index: 1;
+}
+
+/* Asegurar que el texto y el icono se vean por encima del fondo */
+.card-header.header-with-bg *, 
+.card-header.header-with-bg-otro * {
+    position: relative;
+    z-index: 3;
+}
+
+/* Capa oscura común para legibilidad */
+.card-header.header-with-bg::after,
+.card-header.header-with-bg-otro::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Capa oscura */
+    z-index: 2;
+}
+
+/* --- IMÁGENES ESPECÍFICAS --- */
+
+/* Imagen para Cosplay */
 .card-header.header-with-bg::before {
     content: "";
     position: absolute;
@@ -4675,13 +4710,26 @@ section,
     left: 0;
     width: 100%;
     height: 100%;
-    /* Asegúrate de que la ruta sea correcta */
     background-image: url('../img/gallery/DSC00856-2.webp');
     background-size: cover;
     background-position: center;
     z-index: 1;
-    opacity: 1;
 }
+
+/* Imagen para Casamientos (La nueva) */
+.card-header.header-with-bg-otro::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/gallery/DSC00856-2copia.webp');
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
 
 /* La Capa Oscura (Para que el texto sea legible) */
 .card-header.header-with-bg::after {
